@@ -27,9 +27,18 @@
 
 | Phase   | Progress   |
 | ------- | ---------- |
-| Phase 1 | ⏳ WIP     |
-| Phase 2 | ♾️ Pending |
+| Phase 1 | ✅ Done    |
+| Phase 2 | ⏳ WIP     |
 | Phase 3 | ♾️ Pending |
 | Phase 4 | ♾️ Pending |
 | Phase 5 | ♾️ Pending |
 | Phase 6 | ♾️ Pending |
+
+## Phase 1
+This phase has two objectives:
+ - Create a GitHub account and fork the repository;
+ - Create a GitHub [project board](https://github.com/users/mateussgubim/projects/1/views/1)
+   
+   My choice was a Kanban style template.
+
+## Phase 2
