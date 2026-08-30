@@ -28,7 +28,7 @@
 | Phase   | Progress   |
 | ------- | ---------- |
 | Phase 1 | ✅ Done    |
-| Phase 2 | ⏳ WIP     |
+| Phase 2 | ✅ Done    |
 | Phase 3 | ♾️ Pending |
 | Phase 4 | ♾️ Pending |
 | Phase 5 | ♾️ Pending |
@@ -42,3 +42,15 @@ This phase has two objectives:
    My choice was a Kanban style template.
 
 ## Phase 2
+In this phase a simple python script that prints the application version and containerize it.
+
+To run and test it in your local machine:
+```bash
+# Building the image
+docker build  -t hivebox:v0.0.1 . 
+
+# Running the container:
+docker run --rm hivebox:v0.0.1
+```
+
+## Phase 3
