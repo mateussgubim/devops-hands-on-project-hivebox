@@ -42,7 +42,7 @@ This phase has two objectives:
    My choice was a Kanban style template.
 
 ## Phase 2
-In this phase a simple python script that prints the application version and containerize it.
+In this phase a simple python script that prints the application version should be created and containerized.
 
 To run and test it in your local machine:
 ```bash
