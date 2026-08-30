@@ -33,17 +33,6 @@ wheels = [
 ]
 
 [[package]]
-name = "devops-hands-on-project-hivebox"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "fastapi" },
-]
-
-[package.metadata]
-requires-dist = [{ name = "fastapi", specifier = ">=0.141.1" }]
-
-[[package]]
 name = "fastapi"
 version = "0.141.1"
 source = { registry = "https://pypi.org/simple" }
@@ -58,6 +47,17 @@ sdist = { url = "https://files.pythonhosted.org/packages/8a/02/91e3416a8fdd715ab
 wheels = [
     { url = "https://files.pythonhosted.org/packages/cb/03/10388a42375ee7e4ac9b94eb2c5c569c8b5795e377e701c9ac3ad63de890/fastapi-0.141.1-py3-none-any.whl", hash = "sha256:bfb91aa2d334c61cb35ba9a116fc123b3d3df31640b801cf57a7a78ec3f603b3", size = 131954, upload-time = "2026-07-29T17:18:04.364Z" },
 ]
+
+[[package]]
+name = "hivebox"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "fastapi" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "fastapi", specifier = ">=0.141.1" }]
 
 [[package]]
 name = "idna"
