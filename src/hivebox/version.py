@@ -1,6 +1,6 @@
 VERSION = "v0.0.1"
 
-def main(v: str) -> str:
-    return v
+def main() -> str:
+    return VERSION
 
-print(main(VERSION))
+print(main())

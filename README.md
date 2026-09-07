@@ -29,7 +29,7 @@
 | ------- | ---------- |
 | Phase 1 | ✅ Done    |
 | Phase 2 | ✅ Done    |
-| Phase 3 | ♾️ Pending |
+| Phase 3 | ⏳ WIP     |
 | Phase 4 | ♾️ Pending |
 | Phase 5 | ♾️ Pending |
 | Phase 6 | ♾️ Pending |
