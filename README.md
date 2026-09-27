@@ -54,3 +54,21 @@ docker run --rm hivebox:v0.0.1
 ```
 
 ## Phase 3
+The application currently provides the following endpoints:
+  - `GET /version` - returns the current HiveBox application version.
+  - `GET /temperature` - retrieves temperature measurements from selected OpenSenseMap boxes and return their average temperature.
+
+The service uses httpx for asynchronous communication with the OpenSenseMap API and includes basic error handling when measurements are unavailable.
+
+For the Dockerfile I've implemented some of the following best practices:
+  - Multi-stage build;
+  - Dependency locking;
+  - Production-only dependencies;
+  - Build cache optimization;
+  - Python runtime configuration;
+  - Non-root execution;
+  - Explicit network configuration;
+  - Minimal runtime contents;
+  - Clear container startup.
+
+
