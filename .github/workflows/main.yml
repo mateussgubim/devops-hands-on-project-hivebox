@@ -1,0 +1,71 @@
+name: Hivebox CI
+
+on:
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  lint-python:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: Set up UV and Python
+      uses: astral-sh/setup-uv@v5
+      with:
+        python-version: "3.13"
+        enable-cache: true
+        cache-dependency-glob: "uv.lock"
+
+    - name: Install Pylint
+      run: |
+        uv venv
+        uv add pylint
+        uv run pylint hivebox/
+
+  test-python:
+    needs: lint-python
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install uv and Python
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.13"
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - name: Install Dependencies and Test Code
+        run: |
+          uv venv
+          uv add pytest
+          uv run pytest hivebox/
+  lint-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: Lint Dockerfile
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: Dockerfile
+  build-docker:
+    needs: [lint-docker, test-python]
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Docker Setup Buildx
+        uses: docker/setup-buildx-action@v4.4.1
+
+      - name: Build Docker Image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: false 
+          tags: hivebox:latest
